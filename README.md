@@ -36,7 +36,7 @@ This project provides a Makefile to automate common development tasks. Below is 
     ```
 
 -   **Displays this list of available commands and their descriptions:**
-    ```bash
+    ```
     make help
     ```
 
