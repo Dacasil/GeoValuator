@@ -11,7 +11,7 @@ git clone https://github.com/Dacasil/GeoValuator.git
 ```
 2. **Install Minoconda if missing**
 
-Look [here]([https://python-poetry.org/docs/](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-terminal-installer) for Miniconda installation details.
+Look [here](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-terminal-installer) for Miniconda installation details.
 
 4. **Use the make commands**
 
