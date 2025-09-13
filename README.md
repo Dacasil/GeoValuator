@@ -76,7 +76,7 @@ This project provides a Makefile to automate common development tasks. Below is 
 │
 ├── environment.yml   <- The environment.yml file for reproducing the analysis environment
 │
-└── GeoValuator   <- Source code for use in this project.
+└── GeoValuator   <- Source code for use in this project
     │
     ├── __init__.py 
     │
