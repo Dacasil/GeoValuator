@@ -1,6 +1,8 @@
 name: GeoValuator
 channels:
   - conda-forge
+  - pytorch
+  - defaults
 dependencies:
   - python=3.10.13
   - pip
@@ -15,6 +17,17 @@ dependencies:
   - pandas
   - scikit-learn
   - ruff
+  - yaml
+  - pytorch
+  - torchvision
+  - torchaudio
   - pip:
     - python-dotenv
+    - osmnx
+    - utm
+    - folium
+    - requests
+    - shapely
+    - rtree
+    - contextily
     - -e .

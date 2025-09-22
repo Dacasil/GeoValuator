@@ -1,1 +1,1 @@
-from GeoValuator import config  # noqa: F401
+from GeoValuator.config import *

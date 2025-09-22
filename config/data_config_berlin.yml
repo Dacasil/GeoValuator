@@ -1,0 +1,161 @@
+data_folder_name: 'Berlin' # Name of the data file to load the polygon
+data_name: 'lor_ortsteile.geojson'
+row_name: 'geometry' # Name of the row where the polygon
+districts_name: 'OTEIL' # Columns of description of the districts 
+
+number: 20_000 # Number of coordinates extracted from the area of interest
+
+region:
+  country: "Deutschland"
+  city: "Berlin"
+  districts:
+    - name: "Adlershof"
+      rent_price: 18.58
+    - name: "Alt-Hohenschönhausen"
+      rent_price: 15.20
+    - name: "Alt-Treptow"
+      rent_price: 16.23
+    - name: "Altglienicke"
+      rent_price: 16.13
+    - name: "Baumschulenweg"
+      rent_price: 12.68
+    - name: "Biesdorf"
+      rent_price: 13.09
+    - name: "Britz"
+      rent_price: 12.32
+    - name: "Buch"
+      rent_price: 13.53
+    - name: "Buckow"
+      rent_price: 13.11
+    - name: "Charlottenburg"
+      rent_price: 19.65
+    - name: "Charlottenburg-Nord"
+      rent_price: 14.04
+    - name: "Dahlem"
+      rent_price: 19.72
+    - name: "Falkenhagener Feld"
+      rent_price: 9.96
+    - name: "Fennpfuhl"
+      rent_price: 11.83
+    - name: "Französisch Buchholz"
+      rent_price: 15.43
+    - name: "Friedenau"
+      rent_price: 14.05
+    - name: "Friedrichsfelde"
+      rent_price: 15.14
+    - name: "Friedrichshagen"
+      rent_price: 13.11
+    - name: "Friedrichshain"
+      rent_price: 20.11
+    - name: "Frohnau"
+      rent_price: 15.32
+    - name: "Gesundbrunnen"
+      rent_price: 16.54
+    - name: "Gropiusstadt"
+      rent_price: 9.67
+    - name: "Grunewald"
+      rent_price: 19.93
+    - name: "Grünau"
+      rent_price: 14.90
+    - name: "Hakenfelde"
+      rent_price: 15.23
+    - name: "Halensee"
+      rent_price: 19.85
+    - name: "Heiligensee"
+      rent_price: 14.95
+    - name: "Heinersdorf"
+      rent_price: 17.34
+    - name: "Hellersdorf"
+      rent_price: 13.37
+    - name: "Johannisthal"
+      rent_price: 14.71
+    - name: "Karlshorst"
+      rent_price: 16.62
+    - name: "Karow"
+      rent_price: 13.90
+    - name: "Kaulsdorf"
+      rent_price: 15.34
+    - name: "Kreuzberg"
+      rent_price: 16.13
+    - name: "Köpenick"
+      rent_price: 16.77
+    - name: "Lankwitz"
+      rent_price: 13.34
+    - name: "Lichtenberg"
+      rent_price: 13.52
+    - name: "Lichtenrade"
+      rent_price: 12.47
+    - name: "Lichterfelde"
+      rent_price: 16.00
+    - name: "Mahlsdorf"
+      rent_price: 15.59
+    - name: "Mariendorf"
+      rent_price: 13.26
+    - name: "Marienfelde"
+      rent_price: 11.12
+    - name: "Marzahn"
+      rent_price: 10.28
+    - name: "Mitte"
+      rent_price: 22.39
+    - name: "Moabit"
+      rent_price: 18.82
+    - name: "Neu-Hohenschönhausen"
+      rent_price: 11.65
+    - name: "Neukölln"
+      rent_price: 16.78
+    - name: "Niederschöneweide"
+      rent_price: 19.07
+    - name: "Niederschönhausen"
+      rent_price: 14.83
+    - name: "Nikolassee"
+      rent_price: 14.51
+    - name: "Oberschöneweide"
+      rent_price: 15.99
+    - name: "Pankow"
+      rent_price: 17.69
+    - name: "Prenzlauer Berg"
+      rent_price: 18.77
+    - name: "Rahnsdorf"
+      rent_price: 14.69
+    - name: "Reinickendorf"
+      rent_price: 14.78
+    - name: "Rudow"
+      rent_price: 14.16
+    - name: "Rummelsburg"
+      rent_price: 18.10
+    - name: "Schmargendorf"
+      rent_price: 20.60
+    - name: "Schmöckwitz"
+      rent_price: 15.79
+    - name: "Schöneberg"
+      rent_price: 18.04
+    - name: "Siemensstadt"
+      rent_price: 14.76
+    - name: "Spandau"
+      rent_price: 14.18
+    - name: "Staaken"
+      rent_price: 10.40
+    - name: "Steglitz"
+      rent_price: 17.34
+    - name: "Tegel"
+      rent_price: 14.49
+    - name: "Tempelhof"
+      rent_price: 14.05
+    - name: "Tiergarten"
+      rent_price: 23.71
+    - name: "Wannsee"
+      rent_price: 17.13
+    - name: "Wedding"
+      rent_price: 15.43
+    - name: "Weißensee"
+      rent_price: 17.24
+    - name: "Westend"
+      rent_price: 17.04
+    - name: "Wilhelmstadt"
+      rent_price: 13.61
+    - name: "Wilmersdorf"
+      rent_price: 20.12
+    - name: "Wittenau"
+      rent_price: 12.66
+    - name: "Zehlendorf"
+      rent_price: 15.68

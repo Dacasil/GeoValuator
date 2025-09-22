@@ -1,6 +1,6 @@
 # GeoValuator
 
-ML Handson Final Project
+ML hands-on Final Project
 
 ## Installation
 Step-by-step instructions on how to get the development environment running.
@@ -9,9 +9,7 @@ Step-by-step instructions on how to get the development environment running.
 ```
 git clone https://github.com/Dacasil/GeoValuator.git
 ```
-2. **Install Minoconda if missing**
-   
-Look [here](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-terminal-installer) for Miniconda installation details.
+2. **Install Miniconda if missing** (look [here](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-terminal-installer) for Miniconda installation details)
 
 4. **Use the make commands**
 
