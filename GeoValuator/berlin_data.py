@@ -223,7 +223,7 @@ def create_coordinate_map(coordinates):
 
     m = folium.Map(location=[center_lat, center_lon], zoom_start=13)
     
-    # Convert coordinates to list of lists
+    # Convert coords to list of lists
     locations = [[lat, lon] for lat, lon in coordinates]
     
     FastMarkerCluster(locations).add_to(m)

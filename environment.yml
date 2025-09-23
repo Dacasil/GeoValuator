@@ -30,4 +30,5 @@ dependencies:
     - shapely
     - rtree
     - contextily
+    - timm
     - -e .
