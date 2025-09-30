@@ -13,9 +13,9 @@ def load_visualization_data():
     """Load data saved by the main sampling script"""
     data_dir = os.path.join(DATA_DIR, "interim")
     
-    points_file = os.path.join(data_dir, "sampled_points.csv")
-    geo_file = os.path.join(data_dir, "districts_geo.geojson")
-    config_file = os.path.join(data_dir, "visualization_config.json")
+    points_file = os.path.join(data_dir, "sampled_points_muen.csv")
+    geo_file = os.path.join(data_dir, "districts_geo_muen.geojson")
+    config_file = os.path.join(data_dir, "visualization_config_muen.json")
     
     if not all(os.path.exists(f) for f in [points_file, geo_file, config_file]):
         raise FileNotFoundError("Visualization data not found. Run the main sampling script first.")
@@ -170,11 +170,11 @@ def main():
         os.makedirs(output_dir, exist_ok=True)
         
         # Create heatmap
-        heatmap_path = os.path.join(output_dir, f"data_distribution_heatmap_.pdf")
+        heatmap_path = os.path.join(output_dir, f"data_distribution_heatmap_muen.pdf")
         create_data_distribution_heatmap(df, gdf, config, heatmap_path)
         
         # Create price distribution chart
-        price_chart_path = os.path.join(output_dir, f"price_distribution_.pdf")
+        price_chart_path = os.path.join(output_dir, f"price_distribution_muen.pdf")
         create_price_distribution_chart(df, config, price_chart_path)
         
         print("Visualization completed successfully!")

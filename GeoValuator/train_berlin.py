@@ -1,7 +1,4 @@
 import os
-import yaml
-import geopandas as gpd
-import os
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -10,9 +7,6 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 from tqdm import tqdm
-from shapely.ops import unary_union
-from sklearn.preprocessing import MinMaxScaler
-from rtree import index
 import glob
 import json
 from GeoValuator import DATA_DIR
@@ -27,14 +21,13 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 from torch.utils.data import Dataset, DataLoader
 from PIL import Image
-import torchvision.transforms as transformsnormalized_price
 from sklearn.metrics import r2_score
 
 
 ############# Path Configuration #############
 
 CHECKPOINT_DATA_NAME = 'download_checkpoint_berlin.json'
-MODEL_NAME = "best_regression_model.pth"
+MODEL_NAME = "best_regression_model_berlin.pth"
 DATA_NAME  = "berlin_images"
 
 
@@ -209,7 +202,7 @@ def train_model_regression(model, train_loader, val_loader, criterion, optimizer
     return  train_mses, val_mses
 
 def plot_regression_metrics(train_mses, val_mses, name):
-    SAVE_NAME = os.join(FIGURES_DIR, f"{name}_regression_metrics.pdf")
+    SAVE_NAME = os.join(FIGURES_DIR, f"{name}_regression_metrics_berlin.pdf")
     plt.figure(figsize=(10, 6))
     
     # Plot MSE

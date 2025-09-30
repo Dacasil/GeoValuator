@@ -300,7 +300,7 @@ scaler = MinMaxScaler()
 district_df['normalized_price'] = scaler.fit_transform(district_df[['log_rent']].values)
 
 # Create bins for stratified sampling
-num_bins = 5
+num_bins = 2
 district_df['price_bin'] = pd.qcut(district_df['normalized_price'], q=num_bins, labels=False)
 # Bin edges
 bins = pd.qcut(district_df['normalized_price'], q=num_bins, retbins=True)[1]
