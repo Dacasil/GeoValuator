@@ -224,7 +224,6 @@ def plot_regression_metrics(train_mses, val_mses, name):
 DATA_STRUCTURE_PATH = os.path.join(DATA_DIR, "interim", CHECKPOINT_DATA_NAME)
 IMAGE_BASE_DIR = os.path.join(DATA_DIR, "processed", )
 MODELS_DIR = os.path.join(MODELS_DIR, MODEL_NAME)
-PLOT_SAVE_DIR = os.path.join(FIGURES_DIR, "outputs", "plots")
 
 with open(DATA_STRUCTURE_PATH, 'r') as f:
     data = json.load(f)
@@ -384,4 +383,4 @@ full_val_mses = val_mses_s1 + val_mses_s2
 plot_regression_metrics(full_train_mses, full_val_mses, "metrics_full")
 
 model.load_state_dict(torch.load(MODELS_DIR))
-mse, rmse, mae, r2 = evaluate_regression_model(model, test_loader)
+mse, rmse, r2 = evaluate_regression_model(model, test_loader)

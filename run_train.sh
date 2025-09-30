@@ -32,8 +32,5 @@ echo "Latest Commit: $(git rev-parse --short HEAD)"
 echo -e "Uncommitted Changes: $(git status --porcelain | wc -l)\n"
 
 # Run the scripts:
-python -u 
-
-
-
+python -u
 
