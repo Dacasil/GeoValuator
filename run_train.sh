@@ -32,5 +32,8 @@ echo "Latest Commit: $(git rev-parse --short HEAD)"
 echo -e "Uncommitted Changes: $(git status --porcelain | wc -l)\n"
 
 # Run the scripts:
-python -u
+python -u train_berllin.py
+python -u train_berlin_aug.py
+python -u train_mun.py
+python -u train_mun_aug.py
 
