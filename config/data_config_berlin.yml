@@ -1,5 +1,5 @@
-data_folder_name: 'Berlin' # Name of the data file to load the polygon
-data_name: 'lor_ortsteile.geojson'
+data_folder_name: 'Berlin'
+data_name: 'lor_ortsteile.geojson' # Name of the data file to load the polygon
 row_name: 'geometry' # Name of the row where the polygon
 districts_name: 'OTEIL' # Columns of description of the districts 
 

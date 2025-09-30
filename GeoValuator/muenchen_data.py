@@ -104,7 +104,7 @@ def download_images_for_coordinates(df, api_key, secret, max_retries=1, checkpoi
         lat, lon, district = row['latitude'], row['longitude'], row['district']
         
         # Create district folder
-        district_folder = os.path.join(DATA_DIR, "processed", "images", district)
+        district_folder = os.path.join(DATA_DIR, "processed", "muenchen_images", district)
         os.makedirs(district_folder, exist_ok=True)
         
         # Skip if already exists
@@ -228,7 +228,7 @@ def create_coordinate_map(coordinates):
     
     FastMarkerCluster(locations).add_to(m)
 
-    map_dir = os.path.join(FIGURES_DIR, "my_coordinates_map.html")
+    map_dir = os.path.join(FIGURES_DIR, "my_coordinates_map_muen.html")
     m.save(map_dir)
 
 
@@ -262,6 +262,7 @@ country = Region_config['country']
 city = Region_config['city']
 districts = [district['name'] for district in Region_config['districts']]
 rent_prices = [district['rent_price'] for district in Region_config['districts']]
+folder_name = config['data_folder_name']
 
 # Number of coordinates to extract
 NUMBER = config['number']
@@ -293,13 +294,13 @@ district_df = pd.DataFrame(district_info)
 
 #### Create the bins to order the districts ####
 
-# Log transformation
+# Log transformation first
 district_df['log_rent'] = np.log1p(district_df['rent_price'])
 scaler = MinMaxScaler()
 district_df['normalized_price'] = scaler.fit_transform(district_df[['log_rent']].values)
 
 # Create bins for stratified sampling
-num_bins = 10
+num_bins = 5
 district_df['price_bin'] = pd.qcut(district_df['normalized_price'], q=num_bins, labels=False)
 # Bin edges
 bins = pd.qcut(district_df['normalized_price'], q=num_bins, retbins=True)[1]
@@ -360,7 +361,7 @@ for bar in bars:
              f'{int(height)}', ha='center', va='bottom')
 
 plt.tight_layout()
-plt.savefig(os.path.join(FIGURES_DIR, "bin_plot.pdf"))
+plt.savefig(os.path.join(FIGURES_DIR, "bin_plot_muen.pdf"))
 
 
 #### Get the coordinates from each district ####
@@ -390,13 +391,13 @@ for bin_id, bin_data in tqdm(binned_districts.items()):
         if district_idx < remaining_district_samples:
             district_samples += 1
             
-        print(f"  Sampling {district_samples} points from {district_row['name']}")
+        print(f"Sampling {district_samples} points from {district_row['name']}")
         
         try:
             # Get graph for this specific district
             district_G = ox.graph_from_polygon(district_row['geometry'], network_type="drive")
             if len(district_G.nodes) == 0:
-                print(f"    No streets found in {district_row['name']}, skipping")
+                print(f"No streets found in {district_row['name']}, skipping")
                 continue
                 
             district_Gp = ox.project_graph(district_G)
@@ -418,7 +419,7 @@ for bin_id, bin_data in tqdm(binned_districts.items()):
                 })
                     
         except Exception as e:
-            print(f"    Error sampling from {district_row['name']}: {e}")
+            print(f"Error sampling from {district_row['name']}: {e}")
 
 # Create the initial dataframe with all sampled coordinates
 df = pd.DataFrame(sampled_points)
@@ -452,7 +453,7 @@ if len(df) < NUMBER:
 
 # Save the coordinate data first
 DATA_PATH_INTERIM = os.path.join(DATA_DIR, "interim")
-points_file = os.path.join(DATA_PATH_INTERIM, "sampled_points.csv")
+points_file = os.path.join(DATA_PATH_INTERIM, "sampled_points_muen.csv")
 df.to_csv(points_file, index=False)
 
 # Create coordinate map
@@ -462,7 +463,7 @@ create_coordinate_map(latlon_coords)
 
 #### Download the images from Google street view for each coordinate ####
 
-checkpoint_path = os.path.join(DATA_PATH_INTERIM, "download_checkpoint.json")
+checkpoint_path = os.path.join(DATA_PATH_INTERIM, "download_checkpoint_muen.json")
 
 # Only try to load checkpoint if --resume flag is provided
 if args.resume:
@@ -548,11 +549,11 @@ else:
 #### Save the final coordinate data ####
 
 # # Save the final dataframe with only successful downloads
-final_points_file = os.path.join(DATA_PATH_INTERIM, "sampled_points.csv")
+final_points_file = os.path.join(DATA_PATH_INTERIM, "sampled_points_muen.csv")
 final_df.to_csv(final_points_file, index=False)
 
 # Save district geometry information
-district_geo_file = os.path.join(DATA_PATH_INTERIM, "districts_geo.geojson")
+district_geo_file = os.path.join(DATA_PATH_INTERIM, "districts_geo_muen.geojson")
 gdf_filtered.to_file(district_geo_file, driver='GeoJSON')
 
 # Save configuration information for the visualization script
@@ -564,6 +565,6 @@ viz_config = {
     'city': city
 }
 
-config_file = os.path.join(DATA_PATH_INTERIM, "visualization_config.json")
+config_file = os.path.join(DATA_PATH_INTERIM, "visualization_config_muen.json")
 with open(config_file, 'w') as f:
     json.dump(viz_config, f, indent=2)

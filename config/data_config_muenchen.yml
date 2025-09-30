@@ -1,0 +1,61 @@
+data_folder_name: 'Munich' 
+data_name: 'munich.json' # Name of the data file to load the polygon
+row_name: 'geometry' # Name of the row where the polygon data is located
+districts_name: 'name' # Columns of description of the districts 
+
+number: 20_000 # Number of coordinates extracted from the area of interest
+
+region:
+  country: "Deutschland"
+  city: "München"
+  districts:
+    - name: "Allach-Untermenzing"
+      rent_price: 21.75
+    - name: "Altstadt-Lehel"
+      rent_price: 27.7
+    - name: "Au-Haidhausen"
+      rent_price: 26.0
+    - name: "Aubing-Lochhausen-Langwied"
+      rent_price: 21.09
+    - name: "Berg am Laim"
+      rent_price: 21.3
+    - name: "Bogenhausen"
+      rent_price: 26.54
+    - name: "Feldmoching-Hasenbergl"
+      rent_price: 20.92
+    - name: "Hadern"
+      rent_price: 21.2
+    - name: "Laim"
+      rent_price: 22.0
+    - name: "Ludwigsvorstadt-Isarvorstadt"
+      rent_price: 27.62
+    - name: "Maxvorstadt"
+      rent_price: 27.27
+    - name: "Milbertshofen-Am Hart"
+      rent_price: 24.36
+    - name: "Moosach"
+      rent_price: 23.03
+    - name: "Neuhausen-Nymphenburg"
+      rent_price: 23.99
+    - name: "Obergiesing-Fasangarten"
+      rent_price: 22.66
+    - name: "Pasing-Obermenzing"
+      rent_price: 21.82
+    - name: "Ramersdorf-Perlach"
+      rent_price: 22.42
+    - name: "Schwabing-Freimann"
+      rent_price: 24.43
+    - name: "Schwabing-West"
+      rent_price: 27.24
+    - name: "Schwanthalerhöhe"
+      rent_price: 25.35
+    - name: "Sendling"
+      rent_price: 22.45
+    - name: "Sendling-Westpark"
+      rent_price: 22.84
+    - name: "Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln"
+      rent_price: 22.57
+    - name: "Trudering-Riem"
+      rent_price: 21.87
+    - name: "Untergiesing-Harlaching"
+      rent_price: 22.7
