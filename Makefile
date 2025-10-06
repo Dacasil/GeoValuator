@@ -41,17 +41,6 @@ create_environment:
 	
 	@echo ">>> conda env created. Activate with:\nconda activate $(PROJECT_NAME)"
 
-
-#################################################################################
-# PROJECT RULES                                                                 #
-#################################################################################
-
-## Make dataset
-.PHONY: data
-data: requirements
-	$(PYTHON_INTERPRETER) GeoValuator/dataset.py
-
-
 #################################################################################
 # Self Documenting Commands                                                     #
 #################################################################################

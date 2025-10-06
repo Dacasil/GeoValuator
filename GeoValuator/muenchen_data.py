@@ -23,7 +23,6 @@ from folium.plugins import FastMarkerCluster
 import base64, hmac, hashlib
 from urllib.parse import urlparse
 
-
 ################ Functions ################
 
 def get_args():

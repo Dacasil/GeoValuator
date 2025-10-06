@@ -52,6 +52,21 @@ This project provides a Makefile to automate common development tasks. Below is 
     make help
     ```
 
+## Code Execution
+  
+-   **Runs the main data scarping python file (only use --resume if previus excecution broke)**
+    ```bash
+    python3 berlin/munich_data.py --key --secret --config --resume
+    ```
+
+-   **Runs the visualization for the city data**
+    ```bash
+    python3 visualization.py
+    ```
+    
+-   **Run the notebooks on Kaggle. Data can be provided after request**
+
+
 ## Project Organization
 ```
 ├── LICENSE            <- MIT Open-source licence
@@ -63,14 +78,14 @@ This project provides a Makefile to automate common development tasks. Below is 
 │   ├── processed      <- The final, canonical data sets for modeling
 │   └── raw            <- The original, immutable data dump
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── models             <- Trained and serialized models
 │
-├── notebooks          <- Jupyter notebooks for development
+├── notebooks          <- Kaggle Notebooks which were used to train and evaluate all models
 │
 ├── pyproject.toml     <- Project configuration file with package metadata for 
 │                         GeoValuator and configuration for tools like flake
 │
-├── references         <- Data dictionaries, manuals, and all other explanatory materials
+├── references         <- Sources
 │
 ├── reports            <- Generated analysis
 │   └── figures        <- Generated graphics and figures
@@ -81,18 +96,15 @@ This project provides a Makefile to automate common development tasks. Below is 
     │
     ├── __init__.py 
     │
-    ├── config.py               <- Store useful variables and configuration
+    ├── config.py               <- Store city rent data and configuration
     │
-    ├── dataset.py              <- Scripts to download or generate data
+    └── visualization.py                <- Code to create heatmap city plots
     │
-    ├── features.py             <- Code to create features for modeling
+    └── muenchen/berlin_data.py                <- Create the datasets
     │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+    └── Cluster_training_old                <- Old  .py files used to train models on gwdg cluster but switched to Kaggle Notebooks
+    |
+  
 ```
 
 ## License

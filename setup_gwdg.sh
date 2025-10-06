@@ -1,7 +1,7 @@
 #!/bin/bash -i
 module load miniforge3
 
-# Function to check if conda is installed
+# Check if conda is installed
 check_conda_installed() {
     if command -v conda &> /dev/null; then
         echo "Conda is already installed."
@@ -11,7 +11,7 @@ check_conda_installed() {
     fi
 }
 
-# Function to install Miniconda
+# Install Miniconda
 install_miniconda() {
     echo "Downloading Miniconda installer..."
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda3-latest.sh
@@ -23,7 +23,7 @@ install_miniconda() {
     source ~/.bashrc
 }
 
-# Function to check if conda environment exists
+# Check if conda environment exists
 check_conda_env() {
     if conda env list | grep -q "GeoValuator"; then
         echo "Conda environment 'GeoValuator' already exists."
@@ -47,7 +47,7 @@ conda activate GeoValuator
 
 echo $CONDA_DEFAULT_ENV
 
-# Install conda packages
+# Install Packages
 conda install -y -c conda-forge -c pytorch -c defaults \
     pip \
     typer \
@@ -66,7 +66,6 @@ conda install -y -c conda-forge -c pytorch -c defaults \
     torchvision \
     torchaudio
 
-# Install pip packages
 pip install \
     python-dotenv \
     osmnx \
@@ -78,7 +77,6 @@ pip install \
     contextily \
     timm
 
-# Install current package in editable mode
 pip install -e .
 
 echo "GeoValuator environment setup completed successfully!"

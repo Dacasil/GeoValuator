@@ -21,14 +21,22 @@ dependencies:
   - pytorch
   - torchvision
   - torchaudio
+  - pytorch-cuda=11.8 
+  - pillow
+  - geopandas
+  - shapely
+  - rtree
+  - scipy
+  - contextily
+  - pyyaml
   - pip:
     - python-dotenv
     - osmnx
     - utm
     - folium
     - requests
-    - shapely
-    - rtree
-    - contextily
     - timm
+    - albumentations
+    - opencv-python
+    - seaborn
     - -e .
